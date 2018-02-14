@@ -1,0 +1,89 @@
+var x = 200;
+var y = 100;
+
+var x1 = 100
+var x2 = 300
+var x3 = 150
+var x4 = 250
+
+var y1 = 200;
+var y2 = 300;
+var y3 = 350;
+var y4 = 450;
+
+function setup() {
+  createCanvas(400, 400);
+  colorMode(RGB)
+}
+
+function draw() {
+  background(117, 202, 255);
+  noStroke();
+
+  // draw cloud
+  ellipse(100, 120, 80, 80);
+  ellipse(140, 90, 80, 80);
+  ellipse(230, 80, 120, 120);
+  ellipse(300, 120, 80, 80);
+  rect(100, 80, 200, 80);
+
+  // draw drip
+  ellipse(x, y, 20);
+
+  // down 3 pixels each frame, but maybe should be accelerating?
+  y = y + 3
+
+  // if invisible for a full “height” amount…
+  if (y > 420) {
+    // reset
+    y = 180;
+  }
+
+
+  ellipse(x1, y1, 20);
+
+  // down 3 pixels each frame, but maybe should be accelerating?
+  y1 = y1 + 3
+
+  // if invisible for a full “height” amount…
+  if (y1 > 420) {
+    // reset
+    y1 = 180;
+  }
+
+
+  ellipse(x2, y2, 25);
+
+  // down 3 pixels each frame, but maybe should be accelerating?
+  y2 = y2 + 3
+
+  // if invisible for a full “height” amount…
+  if (y2 > 420) {
+    // reset
+    y2 = 180;
+  }
+
+  ellipse(x3, y3, 10);
+
+  // down 3 pixels each frame, but maybe should be accelerating?
+  y3 = y3 + 5
+
+  // if invisible for a full “height” amount…
+  if (y3 > 420) {
+    // reset
+    y3 = 180;
+  }
+
+  ellipse(x4, y4, 10);
+
+  // down 3 pixels each frame, but maybe should be accelerating?
+  y4 = y4 + 5
+
+  // if invisible for a full “height” amount…
+  if (y4 > 420) {
+    // reset
+    y4 = 180;
+  }
+
+
+}
