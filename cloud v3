@@ -1,0 +1,44 @@
+//random balls
+
+
+var x = [];
+var y = [];
+var ySpeed = [];
+var s = []
+
+function setup() {
+  createCanvas(400, 400);
+  colorMode(RGB)
+  for (var index = 0; index < 50; index++) {
+    x[index] = random(110, 290);
+    y[index] = 100;
+    ySpeed[index] = random(1, 5);
+    s[index] = random(5, 20);
+  }
+}
+
+
+function draw() {
+  background(117, 202, 255);
+  noStroke();
+
+  // draw cloud
+  ellipse(100, 120, 80, 80);
+  ellipse(140, 90, 80, 80);
+  ellipse(230, 80, 120, 120);
+  ellipse(300, 120, 80, 80);
+  rect(100, 80, 200, 80);
+
+
+
+  for (var index = 0; index < 50; index++) {
+    ellipse(x[index], y[index], s[index]);
+    y[index] = y[index] + ySpeed[index];
+
+
+    if (y[index] > 450) {
+      // reset
+      y[index] = 100;
+    }
+  }
+}
