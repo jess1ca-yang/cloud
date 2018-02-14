@@ -1,0 +1,33 @@
+var x = [200, 100, 300, 150, 250];
+var y = [200, 300, 350, 450];
+var ySpeed = [1, 2, 3, 5, 2];
+var s = [20, 10, 15, 25, 10]
+
+function setup() {
+  createCanvas(400, 400);
+  colorMode(RGB)
+}
+
+function draw() {
+  background(117, 202, 255);
+  noStroke();
+
+  // draw cloud
+  ellipse(100, 120, 80, 80);
+  ellipse(140, 90, 80, 80);
+  ellipse(230, 80, 120, 120);
+  ellipse(300, 120, 80, 80);
+  rect(100, 80, 200, 80);
+
+
+  for (var index = 0; index < 5; index++) {
+    ellipse(x[index], y[index], s[index]);
+    y[index] = y[index] + ySpeed[index];
+
+
+    if (y[index] > 450) {
+      // reset
+      y[index] = 100;
+    }
+  }
+}
